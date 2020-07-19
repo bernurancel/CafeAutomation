@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+<br><br>
+<hr>
+<link rel="stylesheet" href="{{ url_for('static', filename='style20.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='feedback.css') }}">
+
+
+<ul class="hover-menu">
+   <li>
+        <li>
+          <a href="">
+            <hr><hr>
+            <span><h1>Biz Kimiz?</h1> </span> <br>
+            
+        </a>
+        <img src="https://media.timeout.com/images/105497960/630/472/image.jpg" alt="">
+      </li>
+      <li>
+         <li>
+           <a href="">
+            <hr><hr>
+             <span>Bizim hakkımızda ne düşünmüşler? </span> <br>
+             <span>FeedBack</span>
+             <hr><hr>
+         </a>
+         <img src="https://lh3.googleusercontent.com/proxy/-4Eq_3ejtm4I8GASJownXz1OmzoO-UwzMlEQRMBYC6_mVRehmxXoiOjoWE8hKoDK2r10gR_OW7W75AUfVgJGT26oD3_UsqpYRxqVo8AEV8u8E98wo5MJ2BBEFWkP-ibRnk7ML9dt7cAZtGYRiwEt-5D89Z4IuA" alt="">
+       </li>
+   
+</ul>
+<button class="open-button" onclick="openForm()">Düşünceleriniz Önemli</button>
+
+<div class="form-popup" method='POST' id="myForm">
+  <form action="/" class="form-container">
+    <h4>Bizim hakkımızda ne düşündünüz?</h4>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Puanlama</b></label>
+    <input type="radio" name="rating" value="1"/> 1
+    <input type="radio" name="rating" value="2"/> 2
+    <input type="radio" name="rating" value="3"/> 3
+    <input type="radio" name="rating" value="4"/> 4
+    <input type="radio" name="rating" value="5"/> 5
+    <h4> Yorumunuz : </h4>
+    <textarea name="comments" id="" cols="55" rows="10" placeholder="Yorumunuzu giriniz"></textarea>
+
+
+    <button type="submit" value="submit" class="btn">Gönder</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form> 
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+
+
+{% endblock body %}
